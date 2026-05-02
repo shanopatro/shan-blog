@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>என் வலைப்பதிவு | My Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">✍️ என் வலைப்பதிவு</a>
+      <ul class="nav-links">
+        <li><a href="index.html">முகப்பு</a></li>
+        <li><a href="blog.html">கட்டுரைகள்</a></li>
+        <li><a href="about.html">என்னைப் பற்றி</a></li>
+        <li><a href="contact.html">தொடர்பு</a></li>
+      </ul>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>வணக்கம்! 👋</h1>
+      <p>தொழில்நுட்பம், வாழ்க்கை மற்றும் படைப்பாற்றல் பற்றிய எனது எண்ணங்களை இங்கே பகிர்கிறேன்</p>
+      <a href="blog.html" class="btn-primary">கட்டுரைகளைப் படிக்க →</a>
+    </div>
+  </section>
+
+  <!-- Featured Posts -->
+  <section class="posts-section">
+    <div class="container">
+      <h2 class="section-title">சமீபத்திய கட்டுரைகள்</h2>
+      <div class="posts-grid" id="posts-grid">
+        <!-- Posts injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>புதிய கட்டுரைகள் பெற பதிவு செய்யுங்கள்</h2>
+      <form class="newsletter-form" onsubmit="subscribe(event)">
+        <input type="email" placeholder="உங்கள் மின்னஞ்சல் முகவரி" required/>
+        <button type="submit">பதிவு செய்யுங்கள்</button>
+      </form>
+      <p id="sub-msg" style="display:none;color:#22c55e;margin-top:1rem;">✅ நன்றி! வெற்றிகரமாக பதிவு செய்யப்பட்டது.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 என் வலைப்பதிவு | அன்புடன் ❤️ தமிழில் உருவாக்கப்பட்டது</p>
+      <div class="social-links">
+        <a href="#">GitHub</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

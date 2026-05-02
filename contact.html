@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>தொடர்பு | என் வலைப்பதிவு</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">✍️ என் வலைப்பதிவு</a>
+      <ul class="nav-links">
+        <li><a href="index.html">முகப்பு</a></li>
+        <li><a href="blog.html">கட்டுரைகள்</a></li>
+        <li><a href="about.html">என்னைப் பற்றி</a></li>
+        <li><a href="contact.html">தொடர்பு</a></li>
+      </ul>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>📬 தொடர்பு கொள்ளுங்கள்</h1>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;">செய்தி அனுப்புங்கள்</h2>
+          <p style="color:#78716C;margin-bottom:2rem;">கேள்விகள், கருத்துகள் அல்லது ஒத்துழைப்புக்கு தொடர்பு கொள்ளுங்கள்.</p>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label>உங்கள் பெயர்</label>
+              <input type="text" placeholder="உங்கள் பெயரை உள்ளிடுங்கள்" required/>
+            </div>
+            <div class="form-group">
+              <label>மின்னஞ்சல்</label>
+              <input type="email" placeholder="example@gmail.com" required/>
+            </div>
+            <div class="form-group">
+              <label>தலைப்பு</label>
+              <input type="text" placeholder="செய்தியின் தலைப்பு" required/>
+            </div>
+            <div class="form-group">
+              <label>செய்தி</label>
+              <textarea placeholder="உங்கள் செய்தியை இங்கே எழுதுங்கள்..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">அனுப்புங்கள் 📤</button>
+          </form>
+        </div>
+        <div>
+          <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1.5rem;">தொடர்பு விவரங்கள்</h2>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="display:flex;gap:1rem;align-items:center;padding:1rem;background:white;border:1px solid #E7E5E4;border-radius:12px;">
+              <span style="font-size:1.5rem;">📧</span>
+              <div>
+                <p style="font-weight:600;font-size:0.9rem;">மின்னஞ்சல்</p>
+                <p style="color:#78716C;font-size:0.85rem;">rajesh@example.com</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;padding:1rem;background:white;border:1px solid #E7E5E4;border-radius:12px;">
+              <span style="font-size:1.5rem;">🐙</span>
+              <div>
+                <p style="font-weight:600;font-size:0.9rem;">GitHub</p>
+                <p style="color:#78716C;font-size:0.85rem;">github.com/rajesh-dev</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:center;padding:1rem;background:white;border:1px solid #E7E5E4;border-radius:12px;">
+              <span style="font-size:1.5rem;">🐦</span>
+              <div>
+                <p style="font-weight:600;font-size:0.9rem;">Twitter</p>
+                <p style="color:#78716C;font-size:0.85rem;">@rajesh_dev</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 என் வலைப்பதிவு ❤️</p>
+      <div class="social-links">
+        <a href="#">GitHub</a><a href="#">Twitter</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

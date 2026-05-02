@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GitHub Upload & Publish Guide - தமிழில்</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans Tamil',sans-serif;background:#0D1117;color:#E6EDF3;line-height:1.8}
+.header{background:linear-gradient(135deg,#238636,#1a7f37);padding:3rem 2rem;text-align:center}
+.header h1{font-size:2.2rem;margin-bottom:0.5rem}
+.header p{opacity:0.85;font-size:1.05rem}
+.container{max-width:900px;margin:0 auto;padding:2rem}
+.section{background:#161B22;border:1px solid #30363D;border-radius:12px;padding:2rem;margin-bottom:2rem}
+.section h2{font-size:1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;color:#58A6FF}
+.step{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.step-num{background:#238636;color:white;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;margin-top:0.2rem}
+.step-content h3{font-size:1rem;margin-bottom:0.4rem;color:#E6EDF3}
+.step-content p{color:#8B949E;font-size:0.92rem}
+.code-block{background:#0D1117;border:1px solid #30363D;border-radius:8px;padding:1rem 1.25rem;margin-top:0.75rem;font-family:'JetBrains Mono',monospace;font-size:0.88rem;overflow-x:auto;position:relative}
+.code-block .comment{color:#8B949E}
+.code-block .cmd{color:#79C0FF}
+.code-block .str{color:#A5D6FF}
+.code-block .green{color:#3FB950}
+.badge{display:inline-block;padding:0.2rem 0.6rem;border-radius:50px;font-size:0.78rem;font-weight:600}
+.badge-green{background:#1a4a1e;color:#3FB950;border:1px solid #238636}
+.badge-blue{background:#0d2d5e;color:#79C0FF;border:1px solid #1f6feb}
+.badge-orange{background:#4a2900;color:#FFA657;border:1px solid #9e6a03}
+.tip{background:#0d2d5e;border-left:4px solid #1f6feb;padding:1rem 1.25rem;border-radius:0 8px 8px 0;margin-top:1rem}
+.tip p{color:#79C0FF;font-size:0.9rem}
+.warn{background:#2d1b00;border-left:4px solid #9e6a03;padding:1rem 1.25rem;border-radius:0 8px 8px 0;margin-top:1rem}
+.warn p{color:#FFA657;font-size:0.9rem}
+.file-tree{font-family:'JetBrains Mono',monospace;font-size:0.9rem;background:#0D1117;border:1px solid #30363D;border-radius:8px;padding:1.25rem}
+.file-tree .folder{color:#FFA657}
+.file-tree .file{color:#79C0FF}
+.file-tree .comment{color:#8B949E}
+table{width:100%;border-collapse:collapse;margin-top:1rem}
+th{background:#21262D;color:#E6EDF3;padding:0.75rem;text-align:left;font-size:0.9rem}
+td{padding:0.75rem;border-top:1px solid #30363D;color:#8B949E;font-size:0.9rem}
+td:first-child{color:#E6EDF3}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚀 GitHub Upload & Publish Guide</h1>
+  <p>Blog Website-�ை GitHub-ல் upload செய்து உலகிற்கு publish செய்வது எப்படி — தமிழில்</p>
+</div>
+
+<div class="container">
+
+  <!-- STEP 0: Prerequisites -->
+  <div class="section">
+    <h2>📋 முன்தயாரிப்பு (Prerequisites)</h2>
+    <table>
+      <tr><th>தேவையானது</th><th>Download Link</th><th>நிலை</th></tr>
+      <tr><td>Git</td><td>git-scm.com</td><td><span class="badge badge-green">இலவசம்</span></td></tr>
+      <tr><td>GitHub Account</td><td>github.com</td><td><span class="badge badge-green">இலவசம்</span></td></tr>
+      <tr><td>VS Code (விரும்பினால்)</td><td>code.visualstudio.com</td><td><span class="badge badge-blue">Optional</span></td></tr>
+    </table>
+  </div>
+
+  <!-- PART 1: Git Setup -->
+  <div class="section">
+    <h2>⚙️ பகுதி 1: Git அமைப்பு (First Time Setup)</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Git நிறுவுக (Install Git)</h3>
+        <p>Git-ஐ உங்கள் computer-ல் நிறுவுங்கள். Terminal/Command Prompt-ல் கீழ்கண்டதை தட்டச்சு செய்யுங்கள்:</p>
+        <div class="code-block">
+          <span class="comment"># Windows - PowerShell-ல் அல்லது git-scm.com-ல் download செய்யுங்கள்</span><br/>
+          <span class="comment"># Mac:</span><br/>
+          <span class="cmd">brew install git</span><br/><br/>
+          <span class="comment"># Git version சரிபார்க்க:</span><br/>
+          <span class="cmd">git --version</span><br/>
+          <span class="green">git version 2.43.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>உங்கள் பெயர் மற்றும் Email அமைக்கவும்</h3>
+        <p>Git-க்கு உங்களைப் பற்றி சொல்லுங்கள் (ஒரே ஒரு முறை மட்டும்):</p>
+        <div class="code-block">
+          <span class="cmd">git config --global user.name <span class="str">"உங்கள் பெயர்"</span></span><br/>
+          <span class="cmd">git config --global user.email <span class="str">"yourname@gmail.com"</span></span><br/><br/>
+          <span class="comment"># சரிபார்க்க:</span><br/>
+          <span class="cmd">git config --list</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 2: Project Folder -->
+  <div class="section">
+    <h2>📁 பகுதி 2: Project கட்டமைப்பு</h2>
+    <p style="color:#8B949E;margin-bottom:1rem;">உங்கள் blog project இப்படி இருக்க வேண்டும்:</p>
+    <div class="file-tree">
+      <span class="folder">my-blog/</span><br/>
+      &nbsp;&nbsp;├── <span class="file">index.html</span>&nbsp;&nbsp;&nbsp;<span class="comment"># முகப்பு பக்கம்</span><br/>
+      &nbsp;&nbsp;├── <span class="file">blog.html</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># கட்டுரைகள் பட்டியல்</span><br/>
+      &nbsp;&nbsp;├── <span class="file">about.html</span>&nbsp;&nbsp;&nbsp;<span class="comment"># என்னைப் பற்றி</span><br/>
+      &nbsp;&nbsp;├── <span class="file">contact.html</span>&nbsp;<span class="comment"># தொடர்பு பக்கம்</span><br/>
+      &nbsp;&nbsp;├── <span class="file">post.html</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># ஒற்றை கட்டுரை</span><br/>
+      &nbsp;&nbsp;├── <span class="file">style.css</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># வடிவமைப்பு</span><br/>
+      &nbsp;&nbsp;└── <span class="file">app.js</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># JavaScript</span>
+    </div>
+  </div>
+
+  <!-- PART 3: GitHub Repo -->
+  <div class="section">
+    <h2>🐙 பகுதி 3: GitHub Repository உருவாக்குதல்</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>GitHub.com-ல் Login செய்யுங்கள்</h3>
+        <p>github.com-க்கு சென்று உங்கள் account-ல் login செய்யுங்கள். Account இல்லையென்றால் இலவசமாக உருவாக்குங்கள்.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>புதிய Repository உருவாக்குங்கள்</h3>
+        <p>மேல் வலது மூலையில் <strong>+</strong> பொத்தானை அழுத்தி <strong>"New repository"</strong> தேர்ந்தெடுக்கவும்.</p>
+        <div class="tip">
+          <p>💡 <strong>Repository name:</strong> <code>username.github.io</code> என்று கொடுங்கள்<br/>
+          (உங்கள் GitHub username-ஐ வைக்கவும்)<br/>
+          உதாரணம்: <code>rajesh.github.io</code></p>
+        </div>
+        <div class="warn">
+          <p>⚠️ Repository name சரியாக இருக்க வேண்டும்: <code>உங்கள்-username.github.io</code><br/>
+          இல்லையென்றால் GitHub Pages வேலை செய்யாது!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Settings தேர்ந்தெடுக்கவும்</h3>
+        <p>✅ Public என்று வைக்கவும் (இலவச hosting-க்கு)<br/>
+        ✅ "Add a README file" - check செய்யலாம்<br/>
+        பிறகு <strong>"Create repository"</strong> பொத்தானை அழுத்தவும்.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 4: Upload Code -->
+  <div class="section">
+    <h2>⬆️ பகுதி 4: Code-ஐ GitHub-ல் Upload செய்தல்</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Terminal-ல் Project Folder-க்கு செல்லுங்கள்</h3>
+        <div class="code-block">
+          <span class="comment"># உங்கள் project folder-க்கு navigate செய்யுங்கள்</span><br/>
+          <span class="cmd">cd Desktop/my-blog</span><br/><br/>
+          <span class="comment"># (Windows) அல்லது:</span><br/>
+          <span class="cmd">cd C:\Users\YourName\Desktop\my-blog</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Git Repository Initialize செய்யுங்கள்</h3>
+        <div class="code-block">
+          <span class="comment"># Git-ஐ initialize செய்யுங்கள்</span><br/>
+          <span class="cmd">git init</span><br/>
+          <span class="green">Initialized empty Git repository in .git/</span><br/><br/>
+          <span class="comment"># எல்லா files-ஐயும் add செய்யுங்கள்</span><br/>
+          <span class="cmd">git add .</span><br/><br/>
+          <span class="comment"># முதல் commit உருவாக்குங்கள்</span><br/>
+          <span class="cmd">git commit -m <span class="str">"முதல் commit - Blog website ready"</span></span><br/>
+          <span class="green">[main (root-commit) abc1234] முதல் commit</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>GitHub Remote சேர்க்கவும்</h3>
+        <div class="code-block">
+          <span class="comment"># உங்கள் GitHub repo-வை connect செய்யுங்கள்</span><br/>
+          <span class="cmd">git remote add origin https://github.com/<span class="str">username/username.github.io</span>.git</span><br/><br/>
+          <span class="comment"># main branch set செய்யுங்கள்</span><br/>
+          <span class="cmd">git branch -M main</span><br/><br/>
+          <span class="comment"># GitHub-க்கு push செய்யுங்கள்!</span><br/>
+          <span class="cmd">git push -u origin main</span><br/>
+          <span class="green">Branch 'main' set up to track 'origin/main'</span>
+        </div>
+        <div class="tip">
+          <p>💡 Push செய்யும்போது GitHub username மற்றும் password கேட்கும். Password-க்கு பதிலாக Personal Access Token பயன்படுத்துங்கள் (Settings → Developer Settings → Tokens).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 5: GitHub Pages -->
+  <div class="section">
+    <h2>🌐 பகுதி 5: GitHub Pages-ல் Publish செய்தல்</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Repository Settings-க்கு செல்லுங்கள்</h3>
+        <p>உங்கள் GitHub Repository-ல் <strong>"Settings"</strong> tab-ஐ அழுத்துங்கள்.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Pages Section கண்டுபிடிக்கவும்</h3>
+        <p>இடது பக்க menu-ல் <strong>"Pages"</strong> என்பதை click செய்யுங்கள்.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Branch தேர்ந்தெடுக்கவும்</h3>
+        <p>Source என்பதன் கீழ்:</p>
+        <p>✅ Branch: <strong>main</strong><br/>
+        ✅ Folder: <strong>/ (root)</strong><br/>
+        பிறகு <strong>"Save"</strong> பொத்தானை அழுத்துங்கள்.</p>
+        <div class="tip">
+          <p>🎉 சில நிமிடங்களுக்குப் பிறகு உங்கள் website live ஆகிவிடும்!<br/>
+          URL: <code>https://username.github.io</code></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 6: Update Code -->
+  <div class="section">
+    <h2>🔄 பகுதி 6: பின்னர் Changes Update செய்வது</h2>
+    <p style="color:#8B949E;margin-bottom:1rem;">Blog-ல் புதிய கட்டுரை அல்லது மாற்றம் செய்த பிறகு:</p>
+    <div class="code-block">
+      <span class="comment"># 1. Changed files பார்க்கவும்</span><br/>
+      <span class="cmd">git status</span><br/><br/>
+      <span class="comment"># 2. எல்லாவற்றையும் add செய்யவும்</span><br/>
+      <span class="cmd">git add .</span><br/><br/>
+      <span class="comment"># 3. என்ன மாற்றினீர்கள் என்று எழுதவும்</span><br/>
+      <span class="cmd">git commit -m <span class="str">"புதிய கட்டுரை சேர்க்கப்பட்டது"</span></span><br/><br/>
+      <span class="comment"># 4. GitHub-க்கு அனுப்புங்கள்</span><br/>
+      <span class="cmd">git push</span><br/>
+      <span class="green">✓ Website தானாகவே update ஆகும்!</span>
+    </div>
+  </div>
+
+  <!-- PART 7: Common Errors -->
+  <div class="section">
+    <h2>🛠️ பகுதி 7: பொதுவான பிழைகள் (Common Errors)</h2>
+    <table>
+      <tr><th>பிழை</th><th>தீர்வு</th></tr>
+      <tr><td>Permission denied</td><td>GitHub Personal Access Token உருவாக்குங்கள்</td></tr>
+      <tr><td>Repository not found</td><td>URL சரியாக உள்ளதா என சரிபார்க்கவும்</td></tr>
+      <tr><td>Website not loading</td><td>index.html இருக்கிறதா என பார்க்கவும்</td></tr>
+      <tr><td>404 Error</td><td>GitHub Pages enable செய்யப்பட்டுள்ளதா பார்க்கவும்</td></tr>
+      <tr><td>Changes not showing</td><td>5-10 நிமிடம் காத்திருங்கள், cache clear செய்யுங்கள்</td></tr>
+    </table>
+  </div>
+
+  <!-- Summary -->
+  <div class="section" style="background:linear-gradient(135deg,#0d2d1a,#0d2d5e);border-color:#238636">
+    <h2 style="color:#3FB950">🎯 சுருக்கம் (Quick Reference)</h2>
+    <div class="code-block">
+      <span class="comment"># ஒரே command தொகுப்பில்:</span><br/>
+      <span class="cmd">git init</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Initialize</span><br/>
+      <span class="cmd">git add .</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># எல்லாவற்றையும் Stage செய்</span><br/>
+      <span class="cmd">git commit -m <span class="str">"message"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Commit செய்</span><br/>
+      <span class="cmd">git remote add origin URL</span>&nbsp;&nbsp;&nbsp;<span class="comment"># GitHub connect செய்</span><br/>
+      <span class="cmd">git push -u origin main</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Upload செய்</span>
+    </div>
+    <div style="margin-top:1rem;padding:1rem;background:rgba(35,134,54,0.1);border-radius:8px;border:1px solid #238636">
+      <p style="color:#3FB950;font-size:1rem;">✅ உங்கள் blog இப்போது <strong>https://username.github.io</strong> என்ற முகவரியில் உலகிற்கு accessible!</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

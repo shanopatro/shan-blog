@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>கட்டுரைகள் | என் வலைப்பதிவு</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">✍️ என் வலைப்பதிவு</a>
+      <ul class="nav-links">
+        <li><a href="index.html">முகப்பு</a></li>
+        <li><a href="blog.html">கட்டுரைகள்</a></li>
+        <li><a href="about.html">என்னைப் பற்றி</a></li>
+        <li><a href="contact.html">தொடர்பு</a></li>
+      </ul>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>📝 அனைத்து கட்டுரைகளும்</h1>
+      <p style="opacity:0.8;margin-top:0.5rem;">தொழில்நுட்பம், வாழ்க்கை மற்றும் படைப்பாற்றல் பற்றிய கட்டுரைகள்</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="blog-layout">
+      <main>
+        <div class="posts-grid" id="posts-grid"></div>
+      </main>
+      <aside class="sidebar">
+        <div class="sidebar-widget">
+          <h3>🏷️ வகைகள்</h3>
+          <div class="tag-cloud">
+            <span class="tag">அனைத்தும்</span>
+            <span class="tag">தொழில்நுட்பம்</span>
+            <span class="tag">வாழ்க்கை</span>
+            <span class="tag">கருவிகள்</span>
+            <span class="tag">கல்வி</span>
+          </div>
+        </div>
+        <div class="sidebar-widget">
+          <h3>📊 புள்ளிவிவரங்கள்</h3>
+          <p style="color:#78716C;font-size:0.9rem;">மொத்த கட்டுரைகள்: <strong>6</strong></p>
+          <p style="color:#78716C;font-size:0.9rem;margin-top:0.5rem;">இந்த மாதம்: <strong>3</strong></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 என் வலைப்பதிவு ❤️</p>
+      <div class="social-links">
+        <a href="#">GitHub</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
