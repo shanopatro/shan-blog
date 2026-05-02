@@ -7,7 +7,7 @@ const posts = [
     tag: "தொழில்நுட்பம்",
     emoji: "💻",
     date: "2024-01-15",
-    author: "ராஜேஷ்",
+    author: "shanmugam",
     readTime: "5 நிமிடம்"
   },
   {
@@ -17,7 +17,7 @@ const posts = [
     tag: "கருவிகள்",
     emoji: "🐙",
     date: "2024-01-20",
-    author: "ராஜேஷ்",
+    author: "shanmugam",
     readTime: "7 நிமிடம்"
   },
   {
@@ -27,7 +27,7 @@ const posts = [
     tag: "வாழ்க்கை",
     emoji: "🚀",
     date: "2024-01-25",
-    author: "ராஜேஷ்",
+    author: "shanmugam",
     readTime: "6 நிமிடம்"
   },
   {
@@ -47,7 +47,7 @@ const posts = [
     tag: "கல்வி",
     emoji: "📚",
     date: "2024-02-05",
-    author: "ராஜேஷ்",
+    author: "shanmugam",
     readTime: "4 நிமிடம்"
   },
   {
